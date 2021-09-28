@@ -5,6 +5,7 @@ import tkinter.messagebox as tkMessageBox
 
 root = Tk()
 root.title("GYM Management System")
+root.iconbitmap("C:/Users/Dell/Desktop/gym.ico")
 width = 700
 height = 400
 screen_width = root.winfo_screenwidth()
@@ -13,7 +14,7 @@ x = (screen_width / 2) - (width / 2)
 y = (screen_height / 2) - (height / 2)
 root.geometry("%dx%d+%d+%d" % (width, height, x, y))
 root.resizable(0, 0)
-root.config(bg="black")
+root.config(bg="#C0C0C0")
 
 # ============================VARIABLES===================================
 FIRSTNAME = StringVar()
@@ -169,7 +170,7 @@ def DeleteData():
     if not tree.selection():
         result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
     else:
-        result = tkMessageBox.askquestion('', 'Are you sure you want to delete this record?', icon="warning")
+        result = tkMessageBox.askquestion('', 'Are you sure you want to delete the record?', icon="warning")
         if result == 'yes':
             curItem = tree.focus()
             contents = (tree.item(curItem))
@@ -194,6 +195,7 @@ def AddNewWindow():
     CONTACT.set("")
     NewWindow = Toplevel()
     NewWindow.title("GYM Management System")
+    NewWindow.iconbitmap("C:/Users/Dell/Desktop/gym.ico")
     width = 400
     height = 300
     screen_width = root.winfo_screenwidth()
@@ -254,11 +256,11 @@ def AddNewWindow():
 # ============================FRAMES======================================
 Top = Frame(root, width=500, bd=1, relief=SOLID)
 Top.pack(side=TOP)
-Mid = Frame(root, width=500, bg="black")
+Mid = Frame(root, width=500, bg="#C0C0C0")
 Mid.pack(side=TOP)
 MidLeft = Frame(Mid, width=100)
 MidLeft.pack(side=LEFT, pady=10)
-MidLeftPadding = Frame(Mid, width=370, bg="black")
+MidLeftPadding = Frame(Mid, width=370, bg="#C0C0C0")
 MidLeftPadding.pack(side=LEFT)
 MidRight = Frame(Mid, width=100)
 MidRight.pack(side=RIGHT, pady=10)
@@ -267,8 +269,6 @@ TableMargin.pack(side=TOP)
 # ============================LABELS======================================
 lbl_title = Label(Top, text="GYM Management System", font=('Helvatica', 16), width=500, bg="#99c2ff")
 lbl_title.pack(fill=X)
-
-# ============================ENTRY=======================================
 
 # ============================BUTTONS=====================================
 btn_add = Button(MidLeft, text=" NEW", bg="#8dc678", font=('Helvatica', 12), command=AddNewWindow)
